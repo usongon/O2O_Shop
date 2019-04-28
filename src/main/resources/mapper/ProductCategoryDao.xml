@@ -20,4 +20,13 @@
             )
         </foreach>
     </insert>
+    <delete id="deleteProductCategory">
+        <!-- 具体的sql -->
+        DELETE FROM
+        tb_product_category
+        WHERE
+        shop_id=#{shopId}
+        AND
+        product_category_id=#{productCategoryId}
+    </delete>
 </mapper>

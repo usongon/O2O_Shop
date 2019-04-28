@@ -24,4 +24,14 @@ public interface ProductCategoryService {
     ProductCategoryExecution batchAddProductCategory(List<ProductCategory> productCategoryList)
         throws ProductCategoryOperationException;
 
+    /**
+     *
+     * @param productCategoryId
+     * @param shopId
+     * @return
+     * @throws RuntimeException
+     */
+    ProductCategoryExecution deleteProductCategory(Long productCategoryId,
+                                                   Long shopId) throws RuntimeException;
+
 }

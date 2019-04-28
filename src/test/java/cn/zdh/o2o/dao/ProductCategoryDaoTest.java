@@ -41,5 +41,10 @@ public class ProductCategoryDaoTest extends BaseTest{
         int effectedNum = productCategoryDao.batchInserProductCategory(productCategoryList);
         assertEquals(2, effectedNum);
     }
+    @Test
+    public void testDeleteProductCategory(){
+        int effectedNum = productCategoryDao.deleteProductCategory(1L, 5L);
+        System.out.println(effectedNum);
+    }
 
 }

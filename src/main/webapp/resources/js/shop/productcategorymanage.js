@@ -105,8 +105,7 @@ $(function() {
 						url : deleteUrl,
 						type : 'POST',
 						data : {
-							productCategoryId : target.dataset.id,
-							shopId : shopId
+							productCategoryId : target.dataset.id
 						},
 						dataType : 'json',
 						success : function(data) {

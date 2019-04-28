@@ -8,6 +8,7 @@ import cn.zdh.o2o.exceptions.ProductCategoryOperationException;
 import cn.zdh.o2o.service.ProductCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 @Service
@@ -35,6 +36,24 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
             }
         }else {
             return new ProductCategoryExecution(ProductCategoryStateEnum.EMPTY_LIST);
+        }
+    }
+
+    @Override
+    @Transactional
+    public ProductCategoryExecution deleteProductCategory(Long productCategoryId, Long shopId) throws RuntimeException {
+        try {
+            int effectedNum = productCategoryDao.deleteProductCategory(
+                    productCategoryId, shopId);
+            if (effectedNum <= 0) {
+                throw new RuntimeException("店铺类别删除失败");
+            } else {
+                return new ProductCategoryExecution(
+                        ProductCategoryStateEnum.SUCCESS);
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("deleteProductCategory error: "
+                    + e.getMessage());
         }
     }
 }

@@ -1,6 +1,7 @@
 package cn.zdh.o2o.dao;
 
 import cn.zdh.o2o.entity.ProductCategory;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -18,4 +19,12 @@ public interface ProductCategoryDao {
      * @return
      */
     int batchInserProductCategory(List<ProductCategory> productCategoryList);
+
+    /**
+     *  删除商品类别
+     * @param productCategoryId
+     * @param shopId
+     * @return
+     */
+    int deleteProductCategory(@Param("productCategoryId") Long productCategoryId, @Param("shopId") Long shopId);
 }
