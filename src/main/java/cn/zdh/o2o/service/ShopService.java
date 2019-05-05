@@ -1,5 +1,6 @@
 package cn.zdh.o2o.service;
 
+import cn.zdh.o2o.dto.ImageHolder;
 import cn.zdh.o2o.dto.ShopExecution;
 import cn.zdh.o2o.entity.Shop;
 import cn.zdh.o2o.exceptions.ShopOperationException;
@@ -9,7 +10,7 @@ import java.io.InputStream;
 
 public interface ShopService {
 
-    ShopExecution addShop(Shop shop, InputStream shopImgInputStream, String fileName) throws ShopOperationException;
+    ShopExecution addShop(Shop shop, ImageHolder thumbnail) throws ShopOperationException;
 
     /**
      * 通过shopId获取店铺信息
@@ -21,12 +22,11 @@ public interface ShopService {
     /**
      * 更新店铺信息， 包括对图片的处理
      * @param shop
-     * @param shopImgInputStream
-     * @param fileName
+     * @param thumbnail
      * @return
      * @throws ShopOperationException
      */
-    ShopExecution modifyShop(Shop shop, InputStream shopImgInputStream, String fileName) throws ShopOperationException;
+    ShopExecution modifyShop(Shop shop, ImageHolder thumbnail) throws ShopOperationException;
 
     /**
      * 根据ShopCondition分页返回相应列表数据

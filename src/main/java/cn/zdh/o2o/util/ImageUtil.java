@@ -1,5 +1,6 @@
 package cn.zdh.o2o.util;
 
+import cn.zdh.o2o.dto.ImageHolder;
 import net.coobird.thumbnailator.Thumbnails;
 import net.coobird.thumbnailator.geometry.Positions;
 import org.slf4j.Logger;
@@ -44,18 +45,37 @@ public class ImageUtil {
      * @return
      */
 
-    public static String generateThumbnail(InputStream thumbnailInputStream, String targetAddr, String fileName){
+    public static String generateThumbnail(ImageHolder thumnail, String targetAddr){
         String realFileName = getRandomFileName();
-        String extension = getFileExtension(fileName);
+        String extension = getFileExtension(thumnail.getImageName());
         makeDirPath(targetAddr);
         String relativeAddr = targetAddr + realFileName + extension;
         logger.debug("current relativeAddr is " + relativeAddr);
         File dest = new File(PathUtil.getImgBasePath() + relativeAddr);
         logger.debug("current complete addr is " + PathUtil.getImgBasePath() + relativeAddr);
         try {
-            Thumbnails.of(thumbnailInputStream).size(200,200).
+            Thumbnails.of(thumnail.getImage()).size(200,200).
                     watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "/ship.bmp")),
                             0.25f).outputQuality(0.8f).toFile(dest);
+        }catch (Exception e){
+            logger.error(e.toString());
+            e.printStackTrace();
+        }
+        return relativeAddr;
+    }
+
+    public static String generateNormalImg(ImageHolder thumnail, String targetAddr){
+        String realFileName = getRandomFileName();
+        String extension = getFileExtension(thumnail.getImageName());
+        makeDirPath(targetAddr);
+        String relativeAddr = targetAddr + realFileName + extension;
+        logger.debug("current relativeAddr is " + relativeAddr);
+        File dest = new File(PathUtil.getImgBasePath() + relativeAddr);
+        logger.debug("current complete addr is " + PathUtil.getImgBasePath() + relativeAddr);
+        try {
+            Thumbnails.of(thumnail.getImage()).size(337,640).
+                    watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "/ship.bmp")),
+                            0.25f).outputQuality(0.9f).toFile(dest);
         }catch (Exception e){
             logger.error(e.toString());
             e.printStackTrace();

@@ -6,7 +6,6 @@ import java.util.List;
 public class Product {
 
     private Long productId;
-
     private String productName;
     private String productDesc;
     //简略图

@@ -1,6 +1,7 @@
 package cn.zdh.o2o.service;
 
 import cn.zdh.o2o.BaseTest;
+import cn.zdh.o2o.dto.ImageHolder;
 import cn.zdh.o2o.dto.ShopExecution;
 import cn.zdh.o2o.entity.Area;
 import cn.zdh.o2o.entity.PersonInfo;
@@ -31,7 +32,8 @@ public class ShopServiceTest extends BaseTest{
         shop.setShopName("修改后的店名");
         File shioImg = new File("D://O2O_Img/logo.png");
         InputStream is = new FileInputStream(shioImg);
-        ShopExecution shopExecution = shopService.modifyShop(shop, is, "logo.png");
+        ImageHolder imageHolder = new ImageHolder("logo.png", is);
+        ShopExecution shopExecution = shopService.modifyShop(shop,imageHolder);
         System.out.println("新的图片地址为：" + shopExecution.getShop().getShopImg());
     }
 
@@ -57,8 +59,8 @@ public class ShopServiceTest extends BaseTest{
 
         File shopImg = new File("D://O2O_Img/bac.jpg");
         InputStream is = new FileInputStream(shopImg);
-
-        ShopExecution se = shopService.addShop(shop, is, shopImg.getName());
+        ImageHolder imageHolder = new ImageHolder(shopImg.getName(), is);
+        ShopExecution se = shopService.addShop(shop, imageHolder);
         assertEquals(ShopStateEnum.CHECK.getState(), se.getState());
     }
 
