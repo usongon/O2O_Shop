@@ -1,42 +1,24 @@
-2019-05-14 14:39:46.956 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductById-==>  Preparing: SELECT p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.promotion_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr AS detail_img, pm.img_desc, pm.priority, pm.create_time FROM tb_product p LEFT JOIN tb_product_img pm ON p.product_id = pm.product_id WHERE p.product_id=? ORDER BY pm.priority DESC 
-2019-05-14 14:39:46.997 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductById-==> Parameters: 1(Long)
-2019-05-14 14:39:47.068 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductById-<==      Total: 1
-2019-05-14 14:39:47.076 [main] DEBUG cn.zdh.o2o.util.ImageUtil-current relativeAddr is upload\item\shop\1\2019051414394783488.jpg
-2019-05-14 14:39:47.076 [main] DEBUG cn.zdh.o2o.util.ImageUtil-current complete addr is D:\O2O_Img\upload\item\shop\1\2019051414394783488.jpg
-2019-05-14 14:39:47.613 [main] DEBUG cn.zdh.o2o.dao.ProductImgDao.queryProductImgList-==>  Preparing: SELECT product_img_id, img_addr, img_desc, priority, create_time, product_id FROM tb_product_img WHERE product_id=? ORDER BY product_img_id ASC 
-2019-05-14 14:39:47.613 [main] DEBUG cn.zdh.o2o.dao.ProductImgDao.queryProductImgList-==> Parameters: 1(Long)
-2019-05-14 14:39:47.613 [main] DEBUG cn.zdh.o2o.dao.ProductImgDao.queryProductImgList-<==      Total: 0
-2019-05-14 14:39:47.613 [main] DEBUG c.z.o.d.ProductImgDao.deleteProductImgByProductId-==>  Preparing: DELETE FROM tb_product_img WHERE product_id=? 
-2019-05-14 14:39:47.613 [main] DEBUG c.z.o.d.ProductImgDao.deleteProductImgByProductId-==> Parameters: 1(Long)
-2019-05-14 14:39:47.613 [main] DEBUG c.z.o.d.ProductImgDao.deleteProductImgByProductId-<==    Updates: 0
-2019-05-14 14:39:47.613 [main] DEBUG cn.zdh.o2o.util.ImageUtil-current relativeAddr is upload\item\shop\1\2019051414394763992.jpg
-2019-05-14 14:39:47.613 [main] DEBUG cn.zdh.o2o.util.ImageUtil-current complete addr is D:\O2O_Img\upload\item\shop\1\2019051414394763992.jpg
-2019-05-14 14:39:47.860 [main] DEBUG cn.zdh.o2o.util.ImageUtil-current relativeAddr is upload\item\shop\1\2019051414394739477.png
-2019-05-14 14:39:47.860 [main] DEBUG cn.zdh.o2o.util.ImageUtil-current complete addr is D:\O2O_Img\upload\item\shop\1\2019051414394739477.png
-2019-05-14 14:39:48.045 [main] DEBUG cn.zdh.o2o.dao.ProductImgDao.batchInsertProductImg-==>  Preparing: INSERT INTO tb_product_img(img_addr,img_desc,priority, create_time,product_id) VALUES ( ?, ?, ?, ?, ? ) , ( ?, ?, ?, ?, ? ) 
-2019-05-14 14:39:48.045 [main] DEBUG cn.zdh.o2o.dao.ProductImgDao.batchInsertProductImg-==> Parameters: upload\item\shop\1\2019051414394763992.jpg(String), null, null, 2019-05-14 14:39:47.86(Timestamp), 1(Long), upload\item\shop\1\2019051414394739477.png(String), null, null, 2019-05-14 14:39:47.998(Timestamp), 1(Long)
-2019-05-14 14:39:48.061 [main] DEBUG cn.zdh.o2o.dao.ProductImgDao.batchInsertProductImg-<==    Updates: 2
-2019-05-14 14:39:48.077 [main] DEBUG cn.zdh.o2o.dao.ProductDao.updateProduct-==>  Preparing: UPDATE tb_product SET product_name=?, product_desc=?, img_addr=?, last_edit_time=?, product_category_id=? WHERE product_id = ? AND shop_id=? 
-2019-05-14 14:39:48.077 [main] DEBUG cn.zdh.o2o.dao.ProductDao.updateProduct-==> Parameters: 正式的商品(String), 正式的商品(String), upload\item\shop\1\2019051414394783488.jpg(String), 2019-05-14 14:39:46.896(Timestamp), 1(Long), 1(Long), 1(Long)
-2019-05-14 14:39:48.077 [main] DEBUG cn.zdh.o2o.dao.ProductDao.updateProduct-<==    Updates: 1
-2019-05-14 14:55:33.864 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductById-==>  Preparing: SELECT p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.promotion_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr AS detail_img, pm.img_desc, pm.priority, pm.create_time FROM tb_product p LEFT JOIN tb_product_img pm ON p.product_id = pm.product_id WHERE p.product_id=? ORDER BY pm.priority DESC 
-2019-05-14 14:55:33.895 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductById-==> Parameters: 1(Long)
-2019-05-14 14:55:33.926 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductById-<==      Total: 2
-2019-05-14 14:55:33.942 [main] DEBUG cn.zdh.o2o.util.ImageUtil-current relativeAddr is upload\item\shop\1\2019051414553316267.jpg
-2019-05-14 14:55:33.942 [main] DEBUG cn.zdh.o2o.util.ImageUtil-current complete addr is D:\O2O_Img\upload\item\shop\1\2019051414553316267.jpg
-2019-05-14 14:55:34.067 [main] DEBUG cn.zdh.o2o.dao.ProductImgDao.queryProductImgList-==>  Preparing: SELECT product_img_id, img_addr, img_desc, priority, create_time, product_id FROM tb_product_img WHERE product_id=? ORDER BY product_img_id ASC 
-2019-05-14 14:55:34.083 [main] DEBUG cn.zdh.o2o.dao.ProductImgDao.queryProductImgList-==> Parameters: 1(Long)
-2019-05-14 14:55:34.083 [main] DEBUG cn.zdh.o2o.dao.ProductImgDao.queryProductImgList-<==      Total: 2
-2019-05-14 14:55:34.083 [main] DEBUG c.z.o.d.ProductImgDao.deleteProductImgByProductId-==>  Preparing: DELETE FROM tb_product_img WHERE product_id=? 
-2019-05-14 14:55:34.083 [main] DEBUG c.z.o.d.ProductImgDao.deleteProductImgByProductId-==> Parameters: 1(Long)
-2019-05-14 14:55:34.098 [main] DEBUG c.z.o.d.ProductImgDao.deleteProductImgByProductId-<==    Updates: 2
-2019-05-14 14:55:34.098 [main] DEBUG cn.zdh.o2o.util.ImageUtil-current relativeAddr is upload\item\shop\1\2019051414553421551.jpg
-2019-05-14 14:55:34.098 [main] DEBUG cn.zdh.o2o.util.ImageUtil-current complete addr is D:\O2O_Img\upload\item\shop\1\2019051414553421551.jpg
-2019-05-14 14:55:34.145 [main] DEBUG cn.zdh.o2o.util.ImageUtil-current relativeAddr is upload\item\shop\1\2019051414553438312.jpg
-2019-05-14 14:55:34.145 [main] DEBUG cn.zdh.o2o.util.ImageUtil-current complete addr is D:\O2O_Img\upload\item\shop\1\2019051414553438312.jpg
-2019-05-14 14:55:34.223 [main] DEBUG cn.zdh.o2o.dao.ProductImgDao.batchInsertProductImg-==>  Preparing: INSERT INTO tb_product_img(img_addr,img_desc,priority, create_time,product_id) VALUES ( ?, ?, ?, ?, ? ) , ( ?, ?, ?, ?, ? ) 
-2019-05-14 14:55:34.223 [main] DEBUG cn.zdh.o2o.dao.ProductImgDao.batchInsertProductImg-==> Parameters: upload\item\shop\1\2019051414553421551.jpg(String), null, null, 2019-05-14 14:55:34.145(Timestamp), 1(Long), upload\item\shop\1\2019051414553438312.jpg(String), null, null, 2019-05-14 14:55:34.192(Timestamp), 1(Long)
-2019-05-14 14:55:34.223 [main] DEBUG cn.zdh.o2o.dao.ProductImgDao.batchInsertProductImg-<==    Updates: 2
-2019-05-14 14:55:34.239 [main] DEBUG cn.zdh.o2o.dao.ProductDao.updateProduct-==>  Preparing: UPDATE tb_product SET product_name=?, product_desc=?, img_addr=?, last_edit_time=?, product_category_id=? WHERE product_id = ? AND shop_id=? 
-2019-05-14 14:55:34.239 [main] DEBUG cn.zdh.o2o.dao.ProductDao.updateProduct-==> Parameters: 正式的商品1(String), 正式的商品1(String), upload\item\shop\1\2019051414553316267.jpg(String), 2019-05-14 14:55:33.833(Timestamp), 1(Long), 1(Long), 1(Long)
-2019-05-14 14:55:34.239 [main] DEBUG cn.zdh.o2o.dao.ProductDao.updateProduct-<==    Updates: 1
+2019-05-15 11:05:51.695 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductList-==>  Preparing: SELECT product_id,product_name,product_desc,img_addr,normal_price,promotion_price,priority, create_time,last_edit_time,enable_status,product_category_id,shop_id FROM tb_product ORDER BY priority DESC LiMIT ?,?; 
+2019-05-15 11:05:51.769 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductList-==> Parameters: 0(Integer), 3(Integer)
+2019-05-15 11:05:51.831 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductList-<==      Total: 3
+2019-05-15 11:05:51.862 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductCount-==>  Preparing: SELECT COUNT(1) FROM tb_product 
+2019-05-15 11:05:51.862 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductCount-==> Parameters: 
+2019-05-15 11:05:51.862 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductCount-<==      Total: 1
+2019-05-15 11:05:51.878 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductList-==>  Preparing: SELECT product_id,product_name,product_desc,img_addr,normal_price,promotion_price,priority, create_time,last_edit_time,enable_status,product_category_id,shop_id FROM tb_product WHERE product_name LIKE '%测试%' ORDER BY priority DESC LiMIT ?,?; 
+2019-05-15 11:05:51.878 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductList-==> Parameters: 0(Integer), 3(Integer)
+2019-05-15 11:05:51.878 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductList-<==      Total: 3
+2019-05-15 11:05:51.878 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductCount-==>  Preparing: SELECT COUNT(1) FROM tb_product WHERE product_name LIKE '%测试%' 
+2019-05-15 11:05:51.878 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductCount-==> Parameters: 
+2019-05-15 11:05:51.878 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductCount-<==      Total: 1
+2019-05-15 11:06:31.750 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductList-==>  Preparing: SELECT product_id,product_name,product_desc,img_addr,normal_price,promotion_price,priority, create_time,last_edit_time,enable_status,product_category_id,shop_id FROM tb_product ORDER BY priority DESC LiMIT ?,?; 
+2019-05-15 11:06:31.812 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductList-==> Parameters: 0(Integer), 3(Integer)
+2019-05-15 11:06:31.859 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductList-<==      Total: 3
+2019-05-15 11:06:31.859 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductCount-==>  Preparing: SELECT COUNT(1) FROM tb_product 
+2019-05-15 11:06:31.859 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductCount-==> Parameters: 
+2019-05-15 11:06:31.875 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductCount-<==      Total: 1
+2019-05-15 11:06:31.875 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductList-==>  Preparing: SELECT product_id,product_name,product_desc,img_addr,normal_price,promotion_price,priority, create_time,last_edit_time,enable_status,product_category_id,shop_id FROM tb_product WHERE product_name LIKE '%测试%' ORDER BY priority DESC LiMIT ?,?; 
+2019-05-15 11:06:31.875 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductList-==> Parameters: 0(Integer), 3(Integer)
+2019-05-15 11:06:31.875 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductList-<==      Total: 3
+2019-05-15 11:06:31.875 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductCount-==>  Preparing: SELECT COUNT(1) FROM tb_product WHERE product_name LIKE '%测试%' 
+2019-05-15 11:06:31.875 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductCount-==> Parameters: 
+2019-05-15 11:06:31.875 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductCount-<==      Total: 1

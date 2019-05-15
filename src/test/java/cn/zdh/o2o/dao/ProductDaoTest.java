@@ -119,4 +119,21 @@ public class ProductDaoTest extends BaseTest{
         int effectedNum = productDao.updateProduct(product);
         assertEquals(1, effectedNum);
     }
+
+    @Test
+    public void testBQueryProductList() throws Exception{
+        Product productCondition = new Product();
+        //分页查询
+        List<Product> productList = productDao.queryProductList(productCondition, 0, 3);
+        System.out.println("----------------------aaaaaa---------------" + productList.size());
+        //查询名称为测试的商品总数
+        int count = productDao.queryProductCount(productCondition);
+        System.out.println("----------------------bbbbbb---------------" + count);
+        //模糊查询
+        productCondition.setProductName("测试");
+        productList = productDao.queryProductList(productCondition,0, 3);
+        System.out.println("----------------------cccccc---------------" + productList.size());
+        count = productDao.queryProductCount(productCondition);
+        System.out.println("----------------------dddddd---------------" + count);
+    }
 }
