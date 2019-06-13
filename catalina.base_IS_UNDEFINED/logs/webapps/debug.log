@@ -1,24 +1,10 @@
-2019-05-15 11:05:51.695 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductList-==>  Preparing: SELECT product_id,product_name,product_desc,img_addr,normal_price,promotion_price,priority, create_time,last_edit_time,enable_status,product_category_id,shop_id FROM tb_product ORDER BY priority DESC LiMIT ?,?; 
-2019-05-15 11:05:51.769 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductList-==> Parameters: 0(Integer), 3(Integer)
-2019-05-15 11:05:51.831 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductList-<==      Total: 3
-2019-05-15 11:05:51.862 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductCount-==>  Preparing: SELECT COUNT(1) FROM tb_product 
-2019-05-15 11:05:51.862 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductCount-==> Parameters: 
-2019-05-15 11:05:51.862 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductCount-<==      Total: 1
-2019-05-15 11:05:51.878 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductList-==>  Preparing: SELECT product_id,product_name,product_desc,img_addr,normal_price,promotion_price,priority, create_time,last_edit_time,enable_status,product_category_id,shop_id FROM tb_product WHERE product_name LIKE '%测试%' ORDER BY priority DESC LiMIT ?,?; 
-2019-05-15 11:05:51.878 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductList-==> Parameters: 0(Integer), 3(Integer)
-2019-05-15 11:05:51.878 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductList-<==      Total: 3
-2019-05-15 11:05:51.878 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductCount-==>  Preparing: SELECT COUNT(1) FROM tb_product WHERE product_name LIKE '%测试%' 
-2019-05-15 11:05:51.878 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductCount-==> Parameters: 
-2019-05-15 11:05:51.878 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductCount-<==      Total: 1
-2019-05-15 11:06:31.750 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductList-==>  Preparing: SELECT product_id,product_name,product_desc,img_addr,normal_price,promotion_price,priority, create_time,last_edit_time,enable_status,product_category_id,shop_id FROM tb_product ORDER BY priority DESC LiMIT ?,?; 
-2019-05-15 11:06:31.812 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductList-==> Parameters: 0(Integer), 3(Integer)
-2019-05-15 11:06:31.859 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductList-<==      Total: 3
-2019-05-15 11:06:31.859 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductCount-==>  Preparing: SELECT COUNT(1) FROM tb_product 
-2019-05-15 11:06:31.859 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductCount-==> Parameters: 
-2019-05-15 11:06:31.875 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductCount-<==      Total: 1
-2019-05-15 11:06:31.875 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductList-==>  Preparing: SELECT product_id,product_name,product_desc,img_addr,normal_price,promotion_price,priority, create_time,last_edit_time,enable_status,product_category_id,shop_id FROM tb_product WHERE product_name LIKE '%测试%' ORDER BY priority DESC LiMIT ?,?; 
-2019-05-15 11:06:31.875 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductList-==> Parameters: 0(Integer), 3(Integer)
-2019-05-15 11:06:31.875 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductList-<==      Total: 3
-2019-05-15 11:06:31.875 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductCount-==>  Preparing: SELECT COUNT(1) FROM tb_product WHERE product_name LIKE '%测试%' 
-2019-05-15 11:06:31.875 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductCount-==> Parameters: 
-2019-05-15 11:06:31.875 [main] DEBUG cn.zdh.o2o.dao.ProductDao.queryProductCount-<==      Total: 1
+2019-06-13 13:29:07.364 [main] DEBUG cn.zdh.o2o.dao.HeadLineDao.queryHeadLine-==>  Preparing: SELECT line_id,line_name,line_link,line_img,priority,enable_status,create_time,last_edit_time FROM tb_head_line ORDER BY priority DESC 
+2019-06-13 13:29:07.439 [main] DEBUG cn.zdh.o2o.dao.HeadLineDao.queryHeadLine-==> Parameters: 
+2019-06-13 13:29:32.518 [main] DEBUG cn.zdh.o2o.dao.HeadLineDao.queryHeadLine-==>  Preparing: SELECT line_id,line_name,line_link,line_img,priority,enable_status,create_time,last_edit_time FROM tb_head_line ORDER BY priority DESC 
+2019-06-13 13:29:32.571 [main] DEBUG cn.zdh.o2o.dao.HeadLineDao.queryHeadLine-==> Parameters: 
+2019-06-13 13:30:25.412 [main] DEBUG cn.zdh.o2o.dao.HeadLineDao.queryHeadLine-==>  Preparing: SELECT line_id,line_name,line_link,line_img,priority,enable_status,create_time,last_edit_time FROM tb_head_line ORDER BY priority DESC 
+2019-06-13 13:30:25.491 [main] DEBUG cn.zdh.o2o.dao.HeadLineDao.queryHeadLine-==> Parameters: 
+2019-06-13 13:30:25.532 [main] DEBUG cn.zdh.o2o.dao.HeadLineDao.queryHeadLine-<==      Total: 1
+2019-06-13 13:49:54.789 [main] DEBUG cn.zdh.o2o.dao.ShopCategoryDao.queryShopCategory-==>  Preparing: SELECT * FROM tb_shop_category WHERE parent_id is null ORDER BY priority DESC 
+2019-06-13 13:49:54.820 [main] DEBUG cn.zdh.o2o.dao.ShopCategoryDao.queryShopCategory-==> Parameters: 
+2019-06-13 13:49:54.851 [main] DEBUG cn.zdh.o2o.dao.ShopCategoryDao.queryShopCategory-<==      Total: 1

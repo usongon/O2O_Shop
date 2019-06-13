@@ -6,7 +6,10 @@
     <select id="queryShopCategory" resultType="cn.zdh.o2o.entity.ShopCategory">
         SELECT * FROM tb_shop_category
         <where>
-            <if test="shopCategoryCondition.parent != null">
+            <if test="shopCategoryCondition == null">
+                and parent_id is null
+            </if>
+            <if test="shopCategoryCondition != null and shopCategoryCondition.parent != null">
                 AND parent_id = #{shopCategoryCondition.parent.shopCategoryId}
             </if>
             <if test="shopCategoryCondition != null">
