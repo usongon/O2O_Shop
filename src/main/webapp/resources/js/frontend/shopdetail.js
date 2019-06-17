@@ -3,14 +3,14 @@ $(function() {
 	var maxItems = 20;
 	var pageSize = 10;
 
-	var listUrl = '/myo2o/frontend/listproductsbyshop';
+	var listUrl = '/frontend/listproductsbyshop';
 
 	var pageNum = 1;
 	var shopId = getQueryString('shopId');
 	var productCategoryId = '';
 	var productName = '';
 
-	var searchDivUrl = '/myo2o/frontend/listshopdetailpageinfo?shopId='
+	var searchDivUrl = '/frontend/listshopdetailpageinfo?shopId='
 			+ shopId;
 
 	function getSearchDivData() {
@@ -26,6 +26,7 @@ $(function() {
 										new Date(shop.lastEditTime)
 												.Format("yyyy-MM-dd"));
 								$('#shop-name').html(shop.shopName);
+                                $('#shop_name').html(shop.shopName);
 								$('#shop-desc').html(shop.shopDesc);
 								$('#shop-addr').html(shop.shopAddr);
 								$('#shop-phone').html(shop.phone);
@@ -122,7 +123,7 @@ $(function() {
 					'.card',
 					function(e) {
 						var productId = e.currentTarget.dataset.productId;
-						window.location.href = '/myo2o/frontend/productdetail?productId='
+						window.location.href = '/frontend/productdetail?productId='
 								+ productId;
 					});
 
