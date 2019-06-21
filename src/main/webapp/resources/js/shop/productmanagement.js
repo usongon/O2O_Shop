@@ -1,8 +1,8 @@
 $(function() {
     //获取此店铺下的商品列表的URL
-    var listUrl = '/shopadmin/getproductlistbyshop?pageIndex=1&pageSize=999';
+    var listUrl = '/o2o/shopadmin/getproductlistbyshop?pageIndex=1&pageSize=999';
     //商品下架URL
-    var statusUrl = '/shopadmin/modifyproduct';
+    var statusUrl = '/o2o/shopadmin/modifyproduct';
 
     /**
      * 获取此店铺下的商品列表
@@ -92,18 +92,18 @@ $(function() {
             function(e) {
                 var target = $(e.currentTarget);
                 if (target.hasClass('edit')) {
-                    window.location.href = '/shopadmin/productoperation?productId='
+                    window.location.href = '/o2o/shopadmin/productoperation?productId='
                         + e.currentTarget.dataset.id;
                 } else if (target.hasClass('status')) {
                     changeItemStatus(e.currentTarget.dataset.id,
                         e.currentTarget.dataset.status);
                 } else if (target.hasClass('preview')) {
-                    window.location.href = '/myo2o/frontend/productdetail?productId='
+                    window.location.href = '/o2o/frontend/productdetail?productId='
                         + e.currentTarget.dataset.id;
                 }
             });
 
     $('#new').click(function() {
-        window.location.href = '/shopadmin/productedit';
+        window.location.href = '/o2o/shopadmin/productedit';
     });
 });

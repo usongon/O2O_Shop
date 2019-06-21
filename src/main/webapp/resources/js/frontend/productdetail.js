@@ -1,6 +1,6 @@
 $(function() {
 	var productId = getQueryString('productId');
-	var productUrl = '/frontend/listproductdetailpageinfo?productId='
+	var productUrl = '/o2o/frontend/listproductdetailpageinfo?productId='
 			+ productId;
 
 	$
@@ -14,15 +14,15 @@ $(function() {
 									new Date(product.lastEditTime)
 											.Format("yyyy-MM-dd"));
 							$('#product-name').text(product.productName);
-							$('#product-desc').text(product.productDesc);
+							$('#product-desc').text("商品简介：" + product.productDesc);
 							var imgListHtml = '';
 							product.productImgList.map(function(item, index) {
 								imgListHtml += '<div> <img src="'
-										+ item.imgAddr + '"/></div>';
+										+ item.imgAddr + '"/></div>' + '<br>';
 							});
 							// 生成购买商品的二维码供商家扫描
-							imgListHtml += '<div> <img src="/frontend/generateqrcode4product?productId='
-									+ product.productId + '"/></div>';
+							// imgListHtml += '<div> <img src="/o2o/frontend/generateqrcode4product?productId='
+							// 		+ product.productId + '"/></div>';
 							$('#imgList').html(imgListHtml);
 						}
 					});

@@ -3,14 +3,14 @@ $(function() {
 	var maxItems = 20;
 	var pageSize = 10;
 
-	var listUrl = '/frontend/listproductsbyshop';
+	var listUrl = '/o2o/frontend/listproductsbyshop';
 
 	var pageNum = 1;
 	var shopId = getQueryString('shopId');
 	var productCategoryId = '';
 	var productName = '';
 
-	var searchDivUrl = '/frontend/listshopdetailpageinfo?shopId='
+	var searchDivUrl = '/o2o/frontend/listshopdetailpageinfo?shopId='
 			+ shopId;
 
 	function getSearchDivData() {
@@ -27,9 +27,9 @@ $(function() {
 												.Format("yyyy-MM-dd"));
 								$('#shop-name').html(shop.shopName);
                                 $('#shop_name').html(shop.shopName);
-								$('#shop-desc').html(shop.shopDesc);
-								$('#shop-addr').html(shop.shopAddr);
-								$('#shop-phone').html(shop.phone);
+								$('#shop-desc').html("店铺简介：" + shop.shopDesc);
+								$('#shop-addr').html("店铺地址：" + shop.shopAddr);
+								$('#shop-phone').html("联系方式：" + shop.phone);
 
 								var productCategoryList = data.productCategoryList;
 								var html = '';
@@ -123,7 +123,7 @@ $(function() {
 					'.card',
 					function(e) {
 						var productId = e.currentTarget.dataset.productId;
-						window.location.href = '/frontend/productdetail?productId='
+						window.location.href = '/o2o/frontend/productdetail?productId='
 								+ productId;
 					});
 
